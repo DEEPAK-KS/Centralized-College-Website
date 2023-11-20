@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="head.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <title>B-Tech</title>
+</head>
+<style>
+     ::-webkit-scrollbar{
+        width: 0px;}
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    .logo{
+        height: 100px;
+        width: 200px;
+    }
+    nav{
+        display: flex;
+        padding: 2% 0%;
+        justify-content: left;
+        align-items:start;
+    }
+    .sub-header{
+        height: 60vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,3,.7),rgba(4,9,30,.7)),url("btech.jpg");
+        background-position:50%;
+        background-size: cover;
+        text-align: center;
+        color: white;
+    }
+    .dept-content{
+        width: 85%;
+        margin: auto;
+        padding: 50px 0;
+    }
+    .dept-left{
+        flex-basis: 60%;
+    }
+    .dept-right{
+        flex-basis: 40%;
+    }
+    .dept-left img{
+        width:100%;
+    }
+    .dept-left h2{
+        color: #222;
+        font-weight: 600;
+        margin: 30px 0;        
+    }
+    .dept-right p{
+        padding-left: 40px;
+        padding-top: 0;
+        color: #999;
+        text-align: justify;
+    }
+    .row{
+        display: flex;
+    }
+    .dept-table h3{
+        text-align: center;
+        background: #f44336;
+        color: #fff;
+        padding: 7px 0;
+        font-size: 16px;
+        margin-bottom: 20px;
+
+
+    }
+    .dept-table div{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        color: #555;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+    .dept-right .dept-table{
+        margin-top: 3px;
+    }
+    } 
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+    .dept-right .dept-table{
+        margin-top: 123px;
+    }
+    }  
+    @media screen and (min-width: 1200px) {
+    .dept-right .dept-table{
+        margin-top: 286px;
+    }
+    }
+
+    .fees td{
+        padding: 10px;
+    }
+    .fees tr{
+        background-color: #fff0e6;
+        border: none;
+    }
+    .fees{
+        margin: 20px;
+    }
+    .eligibility{
+        margin-top: 20px;
+    }
+    .eligibility p{
+        font-size: 14px;
+    }
+    .eligibility h3{
+        color: #999;
+        font-weight: 400;
+    }
+    .mobile{
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .email,.icons{
+        margin-bottom: 15px;
+    }
+    .icons svg{
+        margin-right:10px;
+        cursor: pointer;
+    }
+    .email:hover{
+        text-decoration: underline;
+    }
+    .mobile svg,.email,.icons{
+        padding-left: 20px;
+    }
+    .sub-header nav{
+        display: flex;
+        justify-content:space-between;
+    }
+    .draw-border {
+        box-shadow: inset 0 0 0 4px #ffffff;
+        color: #fff;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+    }
+    .draw-border::before, .draw-border::after {
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .draw-border::before {
+        border-bottom-width: 4px;
+        border-left-width: 4px;
+    }
+    .draw-border::after {
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+    .draw-border:hover a {
+        color: #f44336  ;
+    }
+    .draw-border:hover::before, .draw-border:hover::after {
+        border-color: #f44336;
+        transition: border-color 0s, width 0.25s, height 0.25s;
+        width: 100%;
+        height: 100%;
+    }
+    .draw-border:hover::before {
+        transition-delay: 0s, 0s, 0.25s;
+    }
+    .draw-border:hover::after {
+        transition-delay: 0s, 0.25s, 0s;
+    }
+    .btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        line-height: 1.5;
+        font: 400 1.2rem "Roboto Slab", sans-serif;
+        padding: 10px 20px;
+        margin-top: 20px;
+        text-decoration: none;
+        margin-right: 15px;
+        letter-spacing: 0.05rem;
+    }
+    .btn a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .btn:focus {
+        outline: 2px dotted #55d7dc;
+    }
+    .batch .name{
+        width: 30px;        
+    }
+    .contact{
+        margin-top: 20px;
+    }
+    .categories{
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="home.php"><img src="LOGO2.png" class="logo"></a>
+            <button class="btn draw-border"><a href="register.html">Apply Now</a></button>
+        </nav>
+        <h1> Bachelor of Technology</h1>
+    </section>
+    <section class="dept-content">
+        <div class="row">
+                <div class="dept-left">
+                    <img src="btech1.jpg">
+                    <h2>Bachelor of Technology  (B-TECH) Admissions 2024 <br> Duration 4 Years</h2>
+                    <div class="dept-table">
+                    <h3>Department Info</h3>
+                    <div>
+                        <span>Chemical</span>
+                        <span>Seats- 40 &nbsp; NRI-9 &nbsp; FN-6</span>
+                    </div>
+                    <div>
+                        <span>Civil</span>
+                        <span>Seats- 40 &nbsp; NRI-6 &nbsp; FN-4</span>
+                        
+                    </div>
+                    <div>
+                        <span>Compurer Science</span>
+                        <span>Seats- 40 &nbsp; NRI-8 &nbsp; FN-7</span>
+                    </div>
+                    <div>
+                        <span>Food Technology</span>
+                        <span>Seats- 40&nbsp; NRI-9 &nbsp; FN-6</span>
+                    </div>
+                    <div>
+                        <span>Electronic & Communication</span>
+                        <span>Seats- 40 &nbsp; NRI-6 &nbsp; FN-8</span>
+
+                    </div>
+                    <div>
+                        <span>Electricla & Electronics</span>
+                        <span>Seats- 40 &nbsp; NRI-9 &nbsp; FN-6</span>
+                    </div>
+                    <div>
+                        <span>Information Technology</span>
+                        <span>Seats- 40 &nbsp; NRI-5 &nbsp; FN-6</span>
+                    </div>
+                    <div>
+                        <span>Mechanical</span>
+                        <span>Seats- 40 &nbsp; NRI-9 &nbsp; FN-9</span>
+                    </div>
+                    <div>
+                        <span>Metallurgical & MATERIALS</span>
+                        <span>Seats- 40 &nbsp; NRI-8 &nbsp; FN-6</span>
+                    </div>
+
+
+                </div>  
+                <div class="fees">
+                    <table>
+                        <tr>
+                            <td>FEE HEAD</td>
+                            <td>YEARLY</td>
+                            <td>OEC & ST YEARLY</td>
+                            <td>SC YEARLY</td>
+                        </tr>
+                        <tr>
+                            <td>TUITION FEE (YEARLY/SEM-WISE)</td>
+                            <td>75000</td>
+                            <td>500</td>
+                            <td>75000*</td>
+                        </tr>
+                        <tr>
+                            <td>ADMISSION FEE (ONE TIME)</td>
+                            <td>500</td>
+                            <td>0</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>CAUTION DEPOSIT (ONE TIME)</td>
+                            <td>10000</td>
+                            <td>10000</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td>KTU STUDENT ADMINISTRATION <br> FEE (ONE TIME)</td>
+                            <td>1050</td>
+                            <td>1050</td>
+                            <td>1050</td>
+                        </tr>
+                        <tr>
+                            <td>KTU AFFILIATION FEE (ONE TIME)</td>
+                            <td>750</td>
+                            <td>750</td>
+                            <td>750</td>
+                        </tr>
+                        <tr>
+                            <td>KTU ARTS & SPORTS FEE (YEARLY)</td>
+                            <td>530</td>
+                            <td>530</td>
+                            <td>530</td>
+                        </tr>
+                        <tr>
+                            <td>KTU EXAM FEE (YEARLY/SEM-WISE)</td>
+                            <td>4200</td>
+                            <td>0</td>
+                            <td>4200</td>
+                        </tr>
+                        <tr>
+                            <td>FEE FOR SPECIAL FACILITIES <br> &COURSES (YEARLY)</td>
+                            <td>10000</td>
+                            <td>10000</td>
+                            <td>10000</td>
+                        </tr>
+                        <tr>
+                            <td>ID CARD, INSURANCE & <br> HANDBOOK</td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td>250</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL</td>
+                            <td>102280</td>
+                            <td>20750</td>
+                            <td>102280</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="dept-table batch">
+                    <h3>Batch</h3>
+                    <div>
+                        <span>2020-2024</span>
+                        <span>2021-2025</span>
+                        <span>2022-2024</span>
+                        <span>2023-2024</span>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <p>Admissions Enquiry</p><br>
+                    <div class="mobile"><div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg>
+                        91 907 26 61 600
+                    </div>
+                    <br>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg>
+                        080-69 87 8484
+                    </div></div>
+                    <div class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                        </svg>
+                        admission@saintteresa.ac.in
+                    </div>
+                    For NRI Admissions
+                    <div class="mobile">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg>
+                            +91 95444 94704
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg>
+                            +91 94960 94661 (NRI Office)
+                        </div>
+                    </div>
+                    <div class="icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                          </svg>
+                    </div>
+                </div> 
+                </div>
+                <div class="dept-right">
+                    <p>At Saint Teresa's nationally ranked College of Engineering,
+                        we are training a new generation of engineers to go beyond 
+                        problem-solving to influence, impact and create change.</p>
+                    <br>
+                    <p>Questions are encouraged here. We call our students engineers from 
+                        the day they set foot on campus and empower them to design and 
+                        innovate under the close mentorship of our world-class faculty. 
+                        Our students learn by doing from their very first class and quickly
+                        transition to authentic industry projects with real-world corporate,
+                        government, and nonprofit partners.</p>
+                    <br>
+                    <p>The pace of technological change gets faster every day. Unleash your 
+                        curiosity and see where it takes you.</p>
+                        <div class="dept-table">
+                            <h3>Head</h3>
+                            <div>
+                                <span>Emily Thompson</span>
+                                <span>emily.thompson@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Jacob Martinez</span>
+                                <span>jacob.martinez@saintteresa.ac.in</span>
+                                
+                            </div>
+                            <div>
+                                <span>Olivia Davis</span>
+                                <span>olivia.davis@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Ethan Rodriguez</span>
+                                <span>ethan.rodriguez@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Sophia Turner</span>
+                                <span>sophia.turner@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Logan Patel</span>
+                                <span>logan.patel@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Mia Chang</span>
+                                <span>mia.chang@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Ava Johnson</span>
+                                <span>ava.johnson@saintteresa.ac.in</span>
+                            </div>
+                            <div>
+                                <span>Lucas Williams</span>
+                                <span>lucas.williams@saintteresa.ac.in</span>
+                            </div>
+                        </div>  
+                        <div class="eligibility">
+                            <h3>ELIGIBILITY:</h3>
+                            <p>Nationality: For general category admissions candidates must be 
+                            citizens of India.</p>
+                            <p>Age: Applicants should have completed 17 years on 31, December.</p>
+                            <p>Academic Requirements: Candidates who have passed Higher Secondary Examination,
+                            Kerala, or Examinations recognized as equivalent thereto, with Physics and 
+                            Mathematics as compulsory subjects and Chemistry as one of the optional subjects
+                            with at least 45% marks put together in the above subjects are eligible for
+                            admissions. In case, the candidate has not studied Chemistry, the marks
+                            obtained in Computer Science shall be considered. In case, the candidate 
+                            has not studied Chemistry or Computer Science the marks obtained in 
+                            Biotechnology shall be considered. In case, the candidate has not studied 
+                            Chemistry, Computer Science or Biotechnology the marks obtained in Biology 
+                            shall be considered. The marks as shown in the mark list of the Board of 
+                            Examination obtained from the respective Higher Secondary Board shall be 
+                            considered for academic eligibility. Rounding off of the percentage of marks
+                            to the nearest whole number is not permitted.</p>
+                            <p>
+                            Entrance Examination: Candidates should qualify (a minimum of 10 
+                            marks each in Paper I and Paper II) in the Engineering Entrance Exam 
+                            conducted by the Commissioner of Entrance Exams, Govt. of Kerala (KEAM) 
+                            and should be listed in KEAM Rank List or JEE Eligibility.
+                            </p>
+                            <p>
+                            Supernumerary quota for Foreign Nationals (FN), Overseas Citizens of India
+                            (OCI), Persons of Indian Origin (PIO) & Children of Indian Workers in Gulf 
+                            Countries (CIWGC): Visiting Visa holders and those who hold a Visa with 
+                            ‘Housewife’ status are not eligible to sponsor a student. The certificate
+                            of employment on company letterhead of either of the parents is required.
+                            </p>
+                            <p>
+                            NRI Quota: The Managements are entitled to fill up 15% seats in the NRI 
+                            category (NRI) by admitting qualified students who are children of
+                            Non-Resident Indians. For this, a copy of the visa of the Father /
+                            Mother / Sponsor in English is required.
+                            </p>
+                            <div class="categories">
+                            <h3>APPLICATION CATEGORIES</h3>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                              General</p>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                              Christian</p>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                              Sports Quota</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </section>
+</body>
+</html>

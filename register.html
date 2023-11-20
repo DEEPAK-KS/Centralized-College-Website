@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="icon" type="image/png" href="head.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    ::-webkit-scrollbar{
+        width: 0px;
+    }
+   * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    }
+    body {
+        background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("admin.jpg");
+        background-size: 220vh 100vh;
+        background-repeat: no-repeat; 
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        display: flex;
+    }
+    .register {
+        background: rgba(225,255,255,0.0);
+        width: 300px;
+        height: 555px; 
+        color:#ffffff;
+        border-radius: 30px;
+        border: 2px solid rgba(255,255,255,.2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        padding: 30px 40px;
+        transition: 0.5s;
+    }
+    .register:hover {
+        box-shadow: 0 0 20px #333; 
+        background: rgba(225,255,255,.1);
+    }
+    .register h1 {
+        padding-top: px;
+        font-size: 28px;
+        text-align: center;
+    }
+    .input-box {
+        position: relative;
+        width: 100%;
+        height: 38px;
+        background: transparent;
+        margin: 17px 0;
+    }
+    .input-box input, select {
+        width: 100%;
+        content: "";
+        padding-left: 12px;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255,255,255,.2);
+        border-radius: 20px;
+        font-size: 16px;
+        color: #ffffff;
+    }
+    select {
+        width: 105%;
+    }
+    option{
+        color: black;
+    }
+    .input-box input::placeholder {
+        color: #ffffff;
+    }
+    .input-box svg {
+        position: absolute;
+        right: 20px;
+        color: black;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .register a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .register a:hover {
+        text-decoration: underline;
+    }
+    .back:hover svg {
+        animation: shake 0.5s infinite;
+    }
+    @keyframes shake {
+        0% {
+            transform: translate(0px,0px) rotate(0deg);
+        }
+        25% {
+            transform: translate(1px,1px) rotate(1deg);
+        }
+        50% {
+            transform: translate(-1px,-1px) rotate(-1deg);
+        }
+        75% {
+            transform: translate(2px,-1px) rotate(2deg);
+        }
+        100% {
+            transform: translate(-1px,1px) rotate(-1deg);
+        }
+    }
+    .link {
+        display: flex;
+        justify-content: space-between;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-outer-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+    .submit{
+        width: 105%;
+        height: 38px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 14px;
+        border-radius: 30px;
+        background: inherit;
+        border-color: 2px solid rgba(0,0,0,.2);
+        border-width: 50%;
+        color: #ffffff;
+    }
+    .submit:hover{
+        background: #ffffff ;
+        color: black;
+    }
+</style>
+<html>
+    <body>
+        <form action="jumpregister.php" method="POST" name="myForm" onsubmit="return validate();">
+        <div class="register">
+            <h1>Register</h1>
+            <div class="input-box">
+                <input type="text" name="usrname" placeholder="User Name">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-gear" viewBox="0 0 16 16">
+                    <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l-.074-.136c-.306-.561.308-1.175.87-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+                </svg>
+            </div>
+            <div class="input-box">
+                <input type="date" name="dob">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg>
+            </div>
+            <div class="input-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                <input type="number" name="phone" placeholder="Phone Number" >
+            </div>
+            <div class="input-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                </svg>
+                <select name="course">
+                    <option value="1" default hidden>Select First Option *</option>
+                    <option value="Chemical">Chemical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Compurer Science">Computer Science</option>
+                    <option value="Food Technology">Food Technology</option>
+                    <option value="Electronic & Communication">Electronic & Communication</option>
+                    <option value="Electricla & Electronics">Electrical & Electronics</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Metallurgical & MATERIALS">Metallurgical & MATERIALS</option>
+                    <option value="MCA (2 Years)">MCA (2 Years)</option>
+                    <option value="MCA Integrated (5 Years)">MCA Integrated (5 Years)</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                </svg>
+            </div>
+            <div class="input-box ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                    <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                    <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                </svg>
+                <input type="text" name="Email1" placeholder="Email" >
+            </div>
+            <div class="input-box ">
+                <input type="text" name="Email2" placeholder="Re-Enter Email" >
+            </div>
+            <div class="link">
+                <a href="#">Forgot Password ?</a>
+            </div>
+            <div class="submitbtn">
+                <input type="submit" class="submit">
+                <div>
+                    <a href="admin.php" class="register-show">Already have an account?</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
+                        <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                    </svg>
+                </div>
+                <div class="back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                    </svg>
+                    <a href="home.php">Back To Home</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        function validate() {
+            var form = document.forms['myForm'];
+            var dob = form.elements['dob'].value;
+            var today = new Date();
+            var birthDate = new Date(dob);
+            var age = today.getFullYear() - birthDate.getFullYear();
+    
+            if (document.myForm.usrname.value == "" || document.myForm.usrname.value > 0) {
+                document.myForm.usrname.focus();
+                document.myForm.usrname.style.borderColor = "red";
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid User Name!",
+                    icon: "warning"
+                });
+                return false;
+            } else {
+                document.myForm.usrname.style.borderColor = "rgba(255,255,255,.2)";
+            }
+    
+            if (document.myForm.Email1.value == "") {
+                document.myForm.Email1.focus();
+                document.myForm.Email1.style.borderColor = "red";
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid Email ID!",
+                    icon: "warning"
+                });
+                return false;
+            } else {
+                if (validateEmail() == false) {
+                    document.myForm.Email1.style.borderColor = "red";
+                    Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid Email ID!",
+                    icon: "warning"
+                });
+                    return false;
+                } else {
+                    document.myForm.Email1.style.borderColor = "rgba(255,255,255,.2)";
+                }
+            }
+    
+            if (document.myForm.Email1.value !== document.myForm.Email2.value) {
+                document.myForm.Email2.value = "";
+                document.myForm.Email2.focus();
+                document.myForm.Email2.style.borderColor = "red";
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Oops... 🙊",
+                    text: "Email Mismatch!",
+                    icon: "error"
+                });
+                return false;
+            } else {
+                document.myForm.Email2.style.borderColor = "rgba(255,255,255,.2)";
+            }
+    
+            if (age < 17 || age > 50 || dob.trim() === "") {
+                document.myForm.dob.style.borderColor = "red";
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid Date Of Birth(age<17)!",
+                    icon: "warning"
+                });
+                return false;
+            } else {
+                document.myForm.dob.style.borderColor = "rgba(255,255,255,.2)";
+            }
+    
+            if (document.myForm.phone.value == "" || document.myForm.phone.value.length !== 10) {
+                document.myForm.phone.style.borderColor = "red";
+                document.myForm.phone.focus();
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid Phone Number!",
+                    icon: "warning"
+                });
+                return false;
+            } else {
+                document.myForm.phone.style.borderColor = "rgba(255,255,255,.2)";
+            }
+    
+            if (document.myForm.password.value == "" || document.myForm.password.value.length < 8) {
+                document.myForm.password.style.borderColor = "red";
+                document.myForm.password.focus();
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid Password(Min:8 Char)!",
+                    icon: "warning"
+                });
+                return false;
+            } else {
+                document.myForm.password.style.borderColor = "rgba(255,255,255,.2)";
+            }
+    
+            if (document.myForm.course.value == "1") { 
+                document.myForm.course.style.borderColor = "red";
+                return false;
+            } else {
+                document.myForm.course.style.borderColor = "rgba(255,255,255,.2)";
+            }
+    
+            return true;
+        }
+    
+        function validateEmail() {
+            var emailID = document.myForm.Email1.value;
+            var atpos = emailID.indexOf("@");
+            var dotpos = emailID.lastIndexOf(".");
+    
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                document.myForm.Email1.focus();
+                Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1800,
+                    title: "Whoopsie-daisy! 💫",
+                    text: "Please Enter A Valid Email ID!",
+                    icon: "warning"
+                });
+                return false;
+            }
+        }
+    </script>  
+    </body>
+</html>

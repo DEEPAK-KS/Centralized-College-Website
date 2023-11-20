@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="head.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <title>Placement</title>
+</head>
+<style>
+    ::-webkit-scrollbar{
+        width: 0px;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    .logo{
+        height: 100px;
+        width: 200px;
+    }
+    nav{
+        display: flex;
+        padding: 2% 0%;
+        justify-content: left;
+        align-items:start;
+    }
+    .sub-header{
+        height: 60vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,3,.7),rgba(4,9,30,.7)),url("background.jpg");
+        background-position:50%;
+        background-size: cover;
+        text-align: center;
+        color: white;
+    }
+    .dept-content{
+        width: 85%;
+        margin: auto;
+        padding: 50px 0;
+    }
+    .dept-left{
+        flex-basis: 60%;
+    }
+    .dept-right{
+        flex-basis: 40%;
+    }
+    .dept-left img{
+        width:100%;
+    }
+    .dept-left h2{
+        color: #222;
+        font-weight: 600;
+        margin: 10px 0;        
+    }
+    .dept-right p,.dept-left p{
+        padding-left: 40px;
+        padding-top: 0;
+        color: #999;
+        text-align: justify;
+    }
+    .row{
+        display: flex;
+    }
+    .recruiters{
+        margin-top: 0px;
+        margin-left: 15px;
+    }
+    .recruiters div{
+        display: flex;
+    }
+    .recruiters img{
+        width: 150px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .recruiters p{
+        font-size: 12px;
+    }
+    .recruiters h2{
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .mobile{
+        display: flex;
+        margin-bottom: 5px;
+    }
+    .email,.icons{
+        margin-bottom: 15px;
+    }
+    .icons svg{
+        margin-right:10px;
+        cursor: pointer;
+    }
+    .email:hover{
+        text-decoration: underline;
+    }
+    .mobile div,.icons{
+        padding-left: 20px;
+    }
+    .email svg{
+        padding-left: 20px;
+    }
+    .sub-header nav{
+        display: flex;
+        justify-content:space-between;
+    }
+    .draw-border {
+        box-shadow: inset 0 0 0 4px #ffffff;
+        color: #fff;
+        transition: color 0.25s 0.0833333333s;
+        position: relative;
+    }
+    .draw-border::before, .draw-border::after {
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .draw-border::before {
+        border-bottom-width: 4px;
+        border-left-width: 4px;
+    }
+    .draw-border::after {
+        border-top-width: 4px;
+        border-right-width: 4px;
+    }
+    .draw-border:hover a {
+        color: #f44336  ;
+    }
+    .draw-border:hover::before, .draw-border:hover::after {
+        border-color: #f44336;
+        transition: border-color 0s, width 0.25s, height 0.25s;
+        width: 100%;
+        height: 100%;
+    }
+    .draw-border:hover::before {
+        transition-delay: 0s, 0s, 0.25s;
+    }
+    .draw-border:hover::after {
+        transition-delay: 0s, 0.25s, 0s;
+    }
+    .btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        line-height: 1.5;
+        font: 400 1.2rem "Roboto Slab", sans-serif;
+        padding: 10px 20px;
+        margin-top: 20px;
+        text-decoration: none;
+        margin-right: 15px;
+        letter-spacing: 0.05rem;
+    }
+    .btn a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .btn:focus {
+        outline: 2px dotted #55d7dc;
+    }
+    .dept-right .dept-table{
+        margin-top: 120px;
+    }
+    .sub-header div{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .cmpny{
+        height: 30px;
+        width: 200px;
+
+    }
+    .dept-left .data{
+        width: 100%;
+        display: flex;
+    }
+    .dept-left .data select{
+        flex-basis: 49%;
+        margin-right: 10px;
+        width: 48px;
+        padding: 7px;
+        border-radius: 20px;
+    }
+    .output{
+        padding: 10px;
+        display: flex;
+    }
+    .output div{
+        padding-right: 20px;
+    }
+    .sub-header h1{
+        font-weight: 400;
+    }
+    .sub-header div h1{
+        padding-left: 23px;
+    }
+    .sub-header h6{
+        font-weight: 300;
+        margin-right: 15px;
+    }
+</style>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="home.php"><img src="LOGO2.png" class="logo"></a>
+            <button class="btn draw-border"><a href="register.html">Apply Now</a></button>
+        </nav>
+        <h1>Placements 2023</h1>
+        <div>
+            <h1>800+ Placemect</h1>&nbsp;&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
+            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
+          </svg>
+        </div>
+        <h6>As on july 2023</h6>
+    </section>
+    <section class="dept-content">
+        <div class="row">
+                <div class="dept-left">
+                    <img src="graduate.jpg">
+                    <h2>VISION</h2>
+                    <p>100% placements for eligible candidates.</p>
+                    <h2>MoUs signed</h2>
+                    <p>HCL Infosystems Limited is India’s premier information 
+                        enabler and the country’s leading ICT system integrator.
+                        It is also a major Distribution Company, leveraging its 
+                        three decades of expertise in total technology solutions.
+                    </p><br>
+                    <p>UST Global (previously known as US Technology Resources) is 
+                        a provider of end-to-end IT services and business process
+                        outsourcing solutions for Global 2000 companies.</p>  
+                    <h3>Placement Details</h3> 
+                    <div class="data">
+                        <select name="course" id="placement-course" onchange="placement()">
+                            <option value="1" default hidden>Select the course</option>
+                            <option value="Chemical">Chemical</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Compurer Science">Computer Science</option>
+                            <option value="Food Technology">Food Technology</option>
+                            <option value="Electronic & Communication">Electronic & Communication</option>
+                            <option value="Electricla & Electronics">Electrical & Electronics</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Mechanical">Mechanical</option>
+                            <option value="Metallurgical & MATERIALS">Metallurgical & MATERIALS</option>
+                            <option value="MCA (2 Years)">MCA (2 Years)</option>
+                            <option value="MCA Integrated (5 Years)">MCA Integrated (5 Years)</option>
+                        </select>
+                        <select name="course" id="placement-batch" onchange="output()">
+                            <option value="1" default hidden>Select the batch</option>
+                            <option value="" id="batch1" hidden></option>
+                            <option value="" id="batch2" hidden></option>
+                            <option value="" id="batch3" hidden></option>
+                            <option value="" id="batch4" hidden></option>
+                            <option value="" id="batch5" hidden></option>
+                        </select>
+                    </div>
+                    <div class="output">
+                        <div id="output1"></div>
+                        <div id="output2"></div>
+                    </div>
+                    <h3>ACCREDITED COMPANIES</h3>
+                    <div class="cmpny"> <img src="https://www.ajce.in/home/images/tcs-logo-2.png"></div>
+                    <br><br>
+                    <p>TCS is a software services and consulting company headquartered 
+                        in Mumbai. TCS is the largest provider of information technology 
+                        and business process outsourcing services in India.</p>  
+                    <div class="cmpny"> <img src="https://www.ajce.in/home/images/cognizant-logo.jpg"></div>
+                    <br><br>
+                    <p>Cognizant was one of the first IT services companies to organize around key 
+                        industry verticals as well as technology horizontals. It has significant 
+                        practices in banking and financial services, insurance, health care and 
+                        life sciences, retail, manufacturing, logistics, travel and hospitality, 
+                        communications and information; media and entertainment industries; among others.
+                    </p>  
+                    <br><br>
+                    <div class="contact">
+                    <h3>Contact</h3><br>
+                    Ava Johnson <br>Placement Officer
+                    <div class="mobile"><div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg>
+                        + 91 9447290939 
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                        </svg>
+                        080-69 87 8484
+                    </div></div>
+                    <div class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                        </svg>
+                        ava.johnson@saintteresa.ac.in
+                    </div>
+                    Sophia Turner <br>Assistant Placement Officer
+                    <div class="mobile">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg>
+                            +91 95444 94704
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg>
+                            +91 94960 94661 
+                        </div>
+                    </div>
+                    <div class="email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                        </svg>
+                        sophia.turner@saintteresa.ac.in
+                    </div>
+                    <div class="icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                          </svg>
+                    </div>
+                </div>
+                </div>
+                <div class="dept-right">
+                    <p>Department of Placement and Training caters for enhancing not only the
+                        employability skills of the passing out Teresean but also the overall
+                        development of their personality. The dept. organizes on-campus and 
+                        off-campus recruitments and pre-placement training programmes through 
+                        Aptitude tests, Group Discussions, Interviews and presentation skills 
+                        in collaboration with the Dept. of Humanities and the core departments.
+                        Mock interviews and GDs are conducted on a regular basis so as to equip
+                        final and pre-final year students to face the challenges of the recruitment 
+                        scenario. Close on the heels of placement drives, the Placement Assistance
+                        Cell of each department makes an evaluation of the performance of the students. 
+                        This objective appraisal enables us to identify the strengths and weaknesses of
+                        the candidates and select strategies for improvement. Besides, we extend 
+                        intensive supportive measures to the rejected candidates..</p>
+                    <br>
+                    <br>
+                    <div class="recruiters">
+                        <h3>OUR RECRUITERS:</h3>
+                        <div>
+                            <img src="1.jpg">
+                            <img src="2.jpg">
+                            <img src="3.jpg">
+                        </div>
+                        <div>
+                            <img src="4.jpg">
+                            <img src="5.jpg">
+                            <img src="6.jpg">
+                        </div>
+                        <div>
+                            <img src="7.jpg">
+                            <img src="8.jpg">
+                            <img src="9.jpg">
+                        </div>
+                        <div>
+                            <img src="10.jpg">
+                            <img src="11.jpg">
+                            <img src="12.jpg">
+                        </div>
+                        <div>
+                            <img src="13.jpg">
+                            <img src="14.jpg">
+                            <img src="15.jpg">
+                        </div>
+                        <div>
+                            <img src="16.jpg">
+                            <img src="17.jpg">
+                            <img src="18.jpg">
+                        </div>
+                        <div>
+                            <img src="19.jpg">
+                            <img src="20.jpg">
+                            <img src="21.jpg">
+                        </div>
+                        <div>
+                            <img src="22.jpg">
+                            <img src="23.jpg">
+                            <img src="24.jpg">
+                        </div>
+                        <div>
+                            <img src="25.jpg">
+                            <img src="26.jpg">
+                            <img src="27.jpg">
+                        </div>
+                        <div>
+                            <img src="28.jpg">
+                            <img src="29.jpg">
+                            <img src="30.jpg">
+                        </div>
+                        <div>
+                            <img src="31.jpg">
+                            <img src="32.jpg">
+                            <img src="33.jpg">
+                        </div>
+                        <div>
+                            <img src="34.jpg">
+                            <img src="35.jpg">
+                            <img src="36.jpg">
+                        </div>
+                        <div>
+                            <img src="37.jpg">
+                            <img src="38.jpg">
+                            <img src="39.jpg">
+                        </div>
+                        <div>
+                            <img src="40.jpg">
+                            <img src="41.jpg">
+                            <img src="42.jpg">
+                        </div>
+                        <div>
+                            <img src="43.jpg">
+                            <img src="44.jpg">
+                            <img src="45.jpg">
+                        </div>
+                        <div>
+                            <img src="46.jpg">
+                            <img src="47.jpg">
+                            <img src="48.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script>
+        batch1=document.getElementById("batch1");
+        batch2=document.getElementById("batch2");
+        batch3=document.getElementById("batch3");
+        batch4=document.getElementById("batch4");
+        batch5=document.getElementById("batch5");
+        course=document.getElementById("placement-course");
+        function placement(){
+           courseval=course.value;
+           if(courseval=="MCA (2 Years)")
+           {
+                mca();
+           }  
+           else if(courseval=="MCA Integrated (5 Years)")
+           {
+                inmca();
+           }  
+           else{
+                btech();
+           } 
+        }
+        function mca(){
+            batch1.value='2021';
+            document.getElementById("batch1").innerHTML="2021";
+            batch2.value='2020';
+            document.getElementById("batch2").innerHTML="2020";
+            batch3.value='2019';
+            document.getElementById("batch3").innerHTML="2019";
+            batch4.value='2018';
+            document.getElementById("batch4").innerHTML="2018";
+            batch5.value='2017';
+            document.getElementById("batch5").innerHTML="2017";
+            batch1.removeAttribute("hidden");
+            batch2.removeAttribute("hidden");
+            batch3.removeAttribute("hidden");
+            batch4.removeAttribute("hidden");
+            batch5.removeAttribute("hidden");
+        }
+        function inmca(){
+            batch1.value='2018';
+            document.getElementById("batch1").innerHTML="2018";
+            batch2.value='2017';
+            document.getElementById("batch2").innerHTML="2017";
+            batch3.value='2016';
+            document.getElementById("batch3").innerHTML="2016";
+            batch4.value='2015';
+            document.getElementById("batch4").innerHTML="2015";
+            batch5.value='2014';
+            document.getElementById("batch5").innerHTML="2014";
+            batch1.removeAttribute("hidden");
+            batch2.removeAttribute("hidden");
+            batch3.removeAttribute("hidden");
+            batch4.removeAttribute("hidden");
+            batch5.removeAttribute("hidden");
+        }
+        function btech(){
+            batch1.value='2019';
+            document.getElementById("batch1").innerHTML="2019";
+            batch2.value='2018';
+            document.getElementById("batch2").innerHTML="2018";
+            batch3.value='2017';
+            document.getElementById("batch3").innerHTML="2017";
+            batch4.value='2016';
+            document.getElementById("batch4").innerHTML="2016";
+            batch5.value='2015';
+            document.getElementById("batch5").innerHTML="2015";
+            batch1.removeAttribute("hidden");
+            batch2.removeAttribute("hidden");
+            batch3.removeAttribute("hidden");
+            batch4.removeAttribute("hidden");
+            batch5.removeAttribute("hidden");
+        }
+        function output(){
+            out=document.getElementById("output1").innerHTML=course.value;
+            out=document.getElementById("output2").innerHTML='Number of Placed: NaN';
+        }
+    </script>
+</body>
+</html>

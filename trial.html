@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="head.ico">
+</head>
+
+<body>
+  <input type="submit" onclick="show()">
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function show(){
+    Swal.fire({
+                    showConfirmButton: false,
+                    timer: 1500,
+                    title: "!!Error!!",
+                    text: "Please Enter the Password!",
+                    icon: "error"
+                });
+  }
+</script>
+</html>
+
+
+
